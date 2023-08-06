@@ -6,12 +6,12 @@
 
 <script>
 export default {
-    'props':['delay'],
+    props:['delay'],
     data(){
         return {
             showBlock: false,
             timer: null,
-            reactionTime:0
+            reactionTime:0,
         }
     },
     mounted(){
@@ -28,7 +28,7 @@ export default {
         },
         stopTimer(){
             clearInterval(this.timer)
-            console.log(this.reactionTime)
+            this.$emit('end',this.reactionTime)
         }
     }
 }
